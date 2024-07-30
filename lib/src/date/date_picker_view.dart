@@ -1,5 +1,4 @@
 import 'package:date_time_picker_widget/src/date/date_week_view.dart';
-import 'package:date_time_picker_widget/src/date/date_weekdays_view.dart';
 import 'package:date_time_picker_widget/src/date_time_picker_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
@@ -34,7 +33,11 @@ class DatePickerView extends ViewModelWidget<DateTimePickerViewModel> {
 
     return Column(
       children: [
-        MonYearSwitcher(locale: locale),
+        MonYearSwitcher(
+          locale: locale,
+          monYearSwitcherIconColor: monYearSwitcherIconColor,
+          monYearSwitcherTextColor: monYearSwitcherTextColor,
+        ),
         DateWeekView(
           constraints,
           selectedBackgroundColor: selectedBackgroundColor,
